@@ -28,12 +28,25 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="flex items-center justify-between">
                 <ModeToggle />
                 <nav className="ml-auto text-sm font-medium space-x-6">
-                  <Link href="/">主页</Link>
-                  <Link href="/about">关于</Link>
+                  <Link className="no-underline" href="/">
+                    主页
+                  </Link>
+                  <Link className="no-underline" href="/about">
+                    关于
+                  </Link>
                 </nav>
               </div>
             </header>
             <main>{children}</main>
+            <footer className="flex flex-col items-center justify-center my-15">
+              <nav className="text-sm font-medium space-x-6 my-2">
+                <Link href="https://twitter.com/noobnooc">Twitter</Link>
+                <Link href="https://nooc.ink">个人网站</Link>
+              </nav>
+              <div className="opacity-50 font-medium">
+                &copy; {new Date().getFullYear()} 主观世界
+              </div>
+            </footer>
           </div>
           <Analytics />
         </ThemeProvider>
