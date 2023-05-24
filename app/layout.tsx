@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -7,9 +8,23 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "主观世界",
   description: "走出唯一真理观",
+  authors: {
+    name: "Nooc",
+    url: "https://nooc.ink",
+  },
+  openGraph: {
+    title: "主观世界",
+    description: "走出唯一真理观",
+  },
+  twitter: {
+    title: "主观世界",
+    description: "走出唯一真理观",
+    site: "@noobnooc",
+    card: "summary_large_image",
+  },
 };
 
 interface RootLayoutProps {
