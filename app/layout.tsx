@@ -8,8 +8,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Subjective World",
-  description: "My subjective world",
+  title: "主观世界",
+  description: "我的主观世界",
 };
 
 interface RootLayoutProps {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <ModeToggle />
                 <nav className="ml-auto text-sm font-medium space-x-6">
                   <Link className="no-underline" href="/">
-                    主页
+                    博客
                   </Link>
                   <Link className="no-underline" href="/about">
                     关于
@@ -40,10 +40,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <main>{children}</main>
             <footer className="flex flex-col items-center justify-center my-15">
               <nav className="text-sm font-medium space-x-6 my-2">
+                <Link href="https://nooc.ink">作者主页</Link>
                 <Link href="https://twitter.com/noobnooc">Twitter</Link>
-                <Link href="https://nooc.ink">个人网站</Link>
               </nav>
-              <div className="opacity-50 font-medium">
+              <div className="opacity-50 text-sm">
                 &copy; {new Date().getFullYear()} 主观世界
               </div>
             </footer>
