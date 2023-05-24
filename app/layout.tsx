@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     url: "https://nooc.ink",
   },
   openGraph: {
-    title: "主观世界",
-    description: "走出唯一真理观",
+    title: "主观世界 - 走出唯一真理观",
+    description: "Nooc 的主观世界",
   },
   twitter: {
-    title: "主观世界",
-    description: "走出唯一真理观",
+    title: "主观世界 - 走出唯一真理观",
+    description: "Nooc 的主观世界",
     site: "@noobnooc",
     card: "summary_large_image",
   },
