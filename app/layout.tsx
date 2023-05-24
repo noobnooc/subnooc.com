@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "主观世界",
-  description: "我的主观世界",
+  description: "走出唯一真理观",
 };
 
 interface RootLayoutProps {
