@@ -1,7 +1,5 @@
-# Next.js + Contentlayer
+# 主观世界
 
-A template with Next.js 13 app dir, Contentlayer, Tailwind CSS and dark mode.
+[![Website Status](https://img.shields.io/website?label=https://subjective.world&down_color=lightgrey&down_message=离线&up_color=green&up_message=在线&url=https%3A%2F%2Fsubjective.world)](https://subjective.world)
 
-https://next-contentlayer.vercel.app
-
-
+这里是博客 [主观世界](https://subjective.world) 的源码。
