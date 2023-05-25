@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -41,14 +42,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="max-w-2xl mx-auto py-10 px-4">
             <header>
               <div className="flex items-center justify-between">
-                <ModeToggle />
-                <nav className="ml-auto text-sm font-medium space-x-6">
+                <Link className="flex items-center no-underline" href="/">
+                  <Image
+                    className="rounded border"
+                    src="/logo.png"
+                    width={36}
+                    height={36}
+                    alt="网站图标"
+                  />
+                  <span className="text-lg ml-2 font-bold">主观世界</span>
+                </Link>
+                <nav className="flex ml-auto text-sm font-medium space-x-6">
                   <Link className="no-underline" href="/">
                     博客
                   </Link>
                   <Link className="no-underline" href="/about">
                     关于
                   </Link>
+                  <ModeToggle />
                 </nav>
               </div>
             </header>
