@@ -52,7 +52,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   />
                   <span className="text-lg ml-2 font-bold">主观世界</span>
                 </Link>
-                <nav className="flex ml-auto text-sm font-medium space-x-6">
+                <nav className="flex items-center ml-auto text-sm font-medium space-x-6">
                   <Link className="no-underline" href="/">
                     博客
                   </Link>
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
             </header>
             <main>{children}</main>
-            <footer className="flex flex-col items-center justify-center my-12">
+            <footer className="flex flex-col items-center justify-center my-6">
               <nav className="text-sm font-medium space-x-6 my-2">
                 <Link href="https://nooc.ink">作者主页</Link>
                 <Link href="https://twitter.com/noobnooc">Twitter</Link>

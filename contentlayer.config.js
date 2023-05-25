@@ -1,4 +1,4 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -10,7 +10,7 @@ const computedFields = {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
   },
-}
+};
 
 export const Page = defineDocumentType(() => ({
   name: "Page",
@@ -26,7 +26,7 @@ export const Page = defineDocumentType(() => ({
     },
   },
   computedFields,
-}))
+}));
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -44,11 +44,15 @@ export const Post = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    category: {
+      type: "string",
+      required: true,
+    },
   },
   computedFields,
-}))
+}));
 
 export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Post, Page],
-})
+});
