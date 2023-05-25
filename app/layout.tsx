@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import { ModeToggle } from "@/components/mode-toggle";
+import icon from "./icon.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,7 +46,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Link className="flex items-center no-underline" href="/">
                   <Image
                     className="rounded border"
-                    src="/logo.png"
+                    src={icon}
                     width={36}
                     height={36}
                     alt="网站图标"
