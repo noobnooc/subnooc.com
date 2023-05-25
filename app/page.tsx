@@ -1,4 +1,5 @@
 import { allPosts } from "@/.contentlayer/generated";
+import { convertDate } from "@/helpers/convert-date";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
             <h2>{post.title}</h2>
           </Link>
           {post.description && <p>{post.description}</p>}
-          <div className="flex items-center text-sm opacity-60">
+          <div className="flex items-center text-sm opacity-80 -mt-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -31,10 +32,4 @@ export default function Home() {
       ))}
     </div>
   );
-}
-
-function convertDate(dateString: string): string {
-  let date = new Date(dateString);
-
-  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 }

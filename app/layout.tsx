@@ -64,7 +64,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
             </header>
             <main>{children}</main>
-            <footer className="flex flex-col items-center justify-center my-15">
+            <footer className="flex flex-col items-center justify-center my-12">
               <nav className="text-sm font-medium space-x-6 my-2">
                 <Link href="https://nooc.ink">作者主页</Link>
                 <Link href="https://twitter.com/noobnooc">Twitter</Link>
