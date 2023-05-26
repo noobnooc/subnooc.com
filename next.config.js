@@ -7,6 +7,9 @@ const {
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    projectId: "subjective-world",
+  },
 };
 
 module.exports = withContentlayer(nextConfig);

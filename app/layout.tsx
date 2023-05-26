@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import { ModeToggle } from "@/components/mode-toggle";
 import icon from "./icon.png";
+import { Online } from "@/components/online";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -76,7 +77,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Link href="https://twitter.com/noobnooc">Twitter</Link>
                 <a href="/rss.xml">RSS</a>
               </nav>
-              <div className="opacity-50 text-sm">
+              <Online className="mt-5" />
+              <div className="opacity-50 text-sm mt-2">
                 &copy; {new Date().getFullYear()} 主观世界
               </div>
             </footer>
