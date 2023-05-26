@@ -1,3 +1,5 @@
+export const revalidate = 5;
+
 export async function GET(request: Request) {
   const resp = await fetch(
     `https://vercel.com/api/web/insights/realtime?projectId=${process.env.projectId}`,
