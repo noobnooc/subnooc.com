@@ -1,6 +1,6 @@
 import { compareDesc, parseISO } from "date-fns";
 import { Feed } from "feed";
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { allPosts } from "../.contentlayer/generated/index.mjs";
 
 const feed = new Feed({
@@ -38,5 +38,9 @@ allPosts
       ],
     });
   });
+
+if (!existsSync("./public")) {
+  mkdirSync("./public");
+}
 
 writeFileSync("./public/rss.xml", feed.rss2(), { encoding: "utf-8" });
