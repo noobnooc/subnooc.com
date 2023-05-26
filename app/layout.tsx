@@ -74,7 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <nav className="text-sm font-medium space-x-6 my-2">
                 <Link href="https://nooc.ink">作者主页</Link>
                 <Link href="https://twitter.com/noobnooc">Twitter</Link>
-                <Link href="https://subjective.world/rss.xml">RSS</Link>
+                <a href="/rss.xml">RSS</a>
               </nav>
               <div className="opacity-50 text-sm">
                 &copy; {new Date().getFullYear()} 主观世界
