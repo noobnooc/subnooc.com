@@ -3,11 +3,15 @@
 import classNames from "classnames";
 import { useCallback, useEffect, useState } from "react";
 
+export const revalidate = 5;
+
 export function Online({ className }: { className?: string }) {
   const [online, setOnline] = useState(0);
 
   const updateOnline = useCallback(async () => {
-    const response = await fetch("/api/online");
+    const response = await fetch("/api/online", {
+      next: { revalidate: revalidate },
+    });
 
     const { devices } = await response.json();
 
