@@ -1,4 +1,7 @@
-const { withContentlayer } = require("next-contentlayer");
+const {
+  withContentlayer,
+  createContentlayerPlugin,
+} = require("next-contentlayer");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

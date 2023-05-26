@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "preview": "next build && next start",
+    "build": "next build && node scripts/rss.mjs",
+    "preview": "npm run build && next start",
     "start": "next start",
     "lint": "next lint"
   },
@@ -18,8 +18,10 @@
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
     "contentlayer": "^0.3.2",
+    "date-fns": "^2.30.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "feed": "^4.2.2",
     "next": "13.4.1",
     "next-contentlayer": "^0.3.2",
     "next-themes": "^0.2.1",
