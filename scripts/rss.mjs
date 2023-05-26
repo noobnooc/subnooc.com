@@ -1,6 +1,11 @@
 import { compareDesc, parseISO } from "date-fns";
 import { Feed } from "feed";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 import { allPosts } from "../.contentlayer/generated/index.mjs";
 
 const feed = new Feed({
@@ -18,6 +23,12 @@ const feed = new Feed({
   },
 });
 
+const remark = await unified()
+  .use(remarkParse)
+  .use(remarkRehype)
+  .use(rehypeSanitize)
+  .use(rehypeStringify);
+
 allPosts
   .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
   .forEach((post) => {
@@ -26,7 +37,7 @@ allPosts
       id: url,
       link: url,
       title: post.title,
-      description: post.body.raw,
+      description: String(remark.processSync(post.body.raw)),
       date: parseISO(post.date),
       category: [{ name: post.category }],
       author: [
