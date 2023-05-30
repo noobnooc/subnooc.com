@@ -48,6 +48,9 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    wechatLink: {
+      type: "string",
+    },
   },
   computedFields,
 }));
