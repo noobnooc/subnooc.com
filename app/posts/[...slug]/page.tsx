@@ -52,7 +52,7 @@ export default async function PostPage({ params }: PostProps) {
   }
 
   return (
-    <div>
+    <div className="flex flex-col">
       <article className="py-6 prose dark:prose-invert">
         <h1 className="mb-2">{post.title}</h1>
         <PostInfo className="my-4" post={post} />
@@ -64,7 +64,7 @@ export default async function PostPage({ params }: PostProps) {
         <hr className="my-4" />
         <Mdx code={post.body.code} />
       </article>
-      <div className="flex border w-fit items-stretch rounded px-4 py-3 gap-4">
+      <div className="flex border self-center w-fit items-stretch rounded px-4 py-3 gap-4 my-2">
         <QRCodeSVG
           className="w-20 h-20"
           value={
