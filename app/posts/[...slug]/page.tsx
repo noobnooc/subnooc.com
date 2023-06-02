@@ -42,12 +42,14 @@ export async function generateMetadata({
     openGraph: {
       title: `${post.title} - 主观世界`,
       description: `${post.description} - 主观世界`,
+      images: "/opengraph-image.png",
     },
     twitter: {
       title: `${post.title} - 主观世界`,
       description: `${post.description} - 主观世界`,
       site: "@noobnooc",
       card: "summary_large_image",
+      images: "/twitter-image.png",
     },
   };
 }

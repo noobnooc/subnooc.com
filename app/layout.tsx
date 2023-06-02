@@ -33,6 +33,17 @@ export const metadata: Metadata = {
       "application/rss+xml": "https://subjective.world/rss.xml",
     },
   },
+  keywords: [
+    "主观世界",
+    "Subjective World",
+    "Nooc",
+    "Blog",
+    "博客",
+    "个人博客",
+    "独立博客",
+    "读书",
+    "感想",
+  ],
 };
 
 interface RootLayoutProps {
