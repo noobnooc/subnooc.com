@@ -35,6 +35,20 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    authors: {
+      name: "Nooc",
+      url: "https://nooc.ink",
+    },
+    openGraph: {
+      title: `${post.title} - 主观世界`,
+      description: `${post.description} - 主观世界`,
+    },
+    twitter: {
+      title: `${post.title} - 主观世界`,
+      description: `${post.description} - 主观世界`,
+      site: "@noobnooc",
+      card: "summary_large_image",
+    },
   };
 }
 
