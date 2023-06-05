@@ -70,7 +70,7 @@ export default async function PostPage({ params }: PostProps) {
   return (
     <div className="flex flex-col">
       <article className="py-6 prose dark:prose-invert">
-        <h1 className="mb-2">{post.title}</h1>
+        <h1 className="mb-2 font-serif font-bold">{post.title}</h1>
         <PostInfo className="my-4" post={post} />
         {post.description && (
           <p className="text-md mt-0 opacity-60 text-slate-700 dark:text-slate-200">

@@ -6,3 +6,9 @@ a {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+a:hover {
+  text-decoration: double;
+  opacity: 0.7;
+  transition: all 0.1s ease-in-out;
+}
