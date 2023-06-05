@@ -145,7 +145,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
 
           <div
-            className="absolute pointer-events-none bg-fixed top-0 right-0 bottom-0 left-0 bg-repeat opacity-[0.03]"
+            className="hidden sm:block absolute pointer-events-none bg-fixed top-0 right-0 bottom-0 left-0 bg-repeat opacity-[0.03]"
             style={{
               backgroundImage: "url(/background.png)",
               backgroundSize: "360px 360px",
