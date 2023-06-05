@@ -32,7 +32,7 @@ const remark = await unified()
 allPosts
   .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
   .forEach((post) => {
-    const url = `https://subjective.world/posts/${post._raw.flattenedPath}`;
+    const url = `https://subjective.world/${post._raw.flattenedPath}`;
     feed.addItem({
       id: url,
       link: url,

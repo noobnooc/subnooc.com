@@ -19,10 +19,14 @@ export function Online({ className }: { className?: string }) {
   }, []);
 
   useEffect(() => {
-    setInterval(updateOnline, 10000);
+    const timer = setInterval(updateOnline, 10000);
 
     updateOnline();
-  });
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [updateOnline]);
 
   return (
     <div className={classNames("text-sm flex items-center", className)}>
