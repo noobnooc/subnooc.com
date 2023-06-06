@@ -60,7 +60,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         }}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl sm:mx-auto my-5 m-2 sm:m-5 py-10 px-5 sm:px-10 bg-white dark:bg-zinc-900 drop-shadow-lg">
+          <div className="max-w-2xl sm:mx-auto mt-5 mb-20 my-2 py-10 px-5 sm:px-10 bg-white dark:bg-zinc-900 drop-shadow-lg">
             <header>
               <div className="flex items-center justify-between">
                 <Link className="flex items-center no-underline" href="/">
