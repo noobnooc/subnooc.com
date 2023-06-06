@@ -54,13 +54,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="zh">
       <body
-        className={`bg-[url('/background.png')] dark:bg-[url('/background-dark.png')] bg-fixed antialiased relative min-h-screen bg-zinc-100 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 ${inter.className}`}
+        className={`bg-[url('/background-light.png')] dark:bg-[url('/background-dark.png')] bg-fixed antialiased relative min-h-screen bg-zinc-100 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 ${inter.className}`}
         style={{
           backgroundSize: "360px 360px",
         }}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl sm:mx-auto mt-5 mb-20 my-2 py-10 px-5 sm:px-10 bg-white dark:bg-zinc-900 drop-shadow-lg">
+          <div className="max-w-2xl sm:mx-auto mt-5 mb-20 mx-2 py-10 px-5 sm:px-10 bg-white dark:bg-zinc-900 drop-shadow-lg">
             <header>
               <div className="flex items-center justify-between">
                 <Link className="flex items-center no-underline" href="/">
