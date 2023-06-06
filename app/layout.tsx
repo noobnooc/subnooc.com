@@ -103,7 +103,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   </svg>
                   主页
                 </a>
-                <a href="mailto://nooc@nooc.ink">
+                <a href="mailto:nooc@nooc.ink">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
