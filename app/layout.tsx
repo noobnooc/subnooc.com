@@ -54,10 +54,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="zh">
       <body
-        className={`antialiased relative min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={`bg-[url('/background.png')] dark:bg-[url('/background-dark.png')] bg-fixed antialiased relative min-h-screen bg-zinc-100 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 ${inter.className}`}
+        style={{
+          backgroundSize: "360px 360px",
+        }}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl mx-auto py-10 px-4">
+          <div className="max-w-2xl sm:mx-auto my-5 m-2 sm:m-5 py-10 px-5 sm:px-10 bg-white dark:bg-zinc-900 drop-shadow-lg">
             <header>
               <div className="flex items-center justify-between">
                 <Link className="flex items-center no-underline" href="/">
@@ -82,13 +85,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
             </header>
             <main>{children}</main>
-            <footer className="flex flex-col items-center justify-center my-6">
+            <footer className="flex flex-col items-center justify-center mt-20 mb-6">
               <nav className="text-sm font-medium space-x-6 my-2">
                 <a href="https://nooc.ink">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -102,11 +103,25 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   </svg>
                   主页
                 </a>
+                <a href="mailto://nooc@nooc.ink">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    className="inline h-4 w-4 mr-1 feather feather-mail"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  邮箱
+                </a>
                 <a href="https://twitter.com/noobnooc">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -143,15 +158,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
             </footer>
           </div>
-
-          <div
-            className="hidden sm:block absolute pointer-events-none bg-fixed top-0 right-0 bottom-0 left-0 bg-repeat opacity-[0.03]"
-            style={{
-              backgroundImage: "url(/background.png)",
-              backgroundSize: "360px 360px",
-            }}
-          />
-
           <Analytics />
         </ThemeProvider>
       </body>
