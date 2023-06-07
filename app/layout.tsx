@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@/components/analytics";
 import { ModeToggle } from "@/components/mode-toggle";
 import icon from "./icon.png";
-import { Online } from "@/components/online";
+import { Status } from "@/components/status";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,17 +85,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
             </header>
             <main>{children}</main>
-            <footer className="flex flex-col items-center justify-center mt-20 mb-6">
-              <nav className="text-sm font-medium space-x-6 my-2">
+            <footer className="flex flex-col items-center justify-center my-4">
+              <nav className="text-sm font-medium space-x-6 my-10">
                 <a href="https://nooc.ink">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="inline w-4 h-4 mr-1"
                   >
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -109,9 +109,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="inline h-4 w-4 mr-1 feather feather-mail"
                   >
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -125,9 +125,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="inline h-4 w-4 mr-1"
                   >
                     <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
@@ -140,9 +140,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="inline h-4 w-4 mr-1"
                   >
                     <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -152,8 +152,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   RSS
                 </a>
               </nav>
-              <Online className="mt-5" />
-              <div className="opacity-50 text-sm mt-2">
+              <Status className="mt-5" />
+              <div className="opacity-50 text-sm self-end mt-5">
                 &copy; {new Date().getFullYear()} 主观世界
               </div>
             </footer>

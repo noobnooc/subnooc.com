@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 export const revalidate = 5;
 
 export function Online({ className }: { className?: string }) {
-  const [online, setOnline] = useState(0);
+  const [online, setOnline] = useState(1);
 
   const updateOnline = useCallback(async () => {
     const response = await fetch("/api/online", {
@@ -30,13 +30,12 @@ export function Online({ className }: { className?: string }) {
 
   return (
     <div className={classNames("text-sm flex items-center", className)}>
+      有 {Math.max(online, 1)} 人正在浏览
       <span
-        className={classNames("rounded-full inline-block w-2 h-2 mr-2", {
-          "bg-gray-400": online === 0,
-          "bg-green-500": online > 0,
-        })}
+        className={classNames(
+          "rounded-full inline-block w-2 h-2 ml-2 bg-green-500"
+        )}
       />
-      {online} 人正在浏览
     </div>
   );
 }
