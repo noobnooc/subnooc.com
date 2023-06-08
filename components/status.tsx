@@ -65,7 +65,8 @@ export function Status({ className }: { className?: string }) {
           />
         </svg>
         上一位访客来自&nbsp;
-        {status.lastVisitor.city},&nbsp;{status.lastVisitor.country}&nbsp;
+        {status.lastVisitor.city ? `${status.lastVisitor.city}, ` : undefined}
+        {status.lastVisitor.country}&nbsp;
         {status.lastVisitor.flag}
       </div>
       <div className="flex items-center">
