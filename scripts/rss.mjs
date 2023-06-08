@@ -11,15 +11,15 @@ import { allPosts } from "../.contentlayer/generated/index.mjs";
 const feed = new Feed({
   title: "主观世界",
   description: "Nooc 的主观世界",
-  id: "https://subjective.world",
-  link: "https://subjective.world",
+  id: "https://subnooc.com",
+  link: "https://subnooc.com",
   language: "zh",
-  favicon: "https://subjective.world/favicon.ico",
-  copyright: "All rights reserved 2022, Nooc",
+  favicon: "https://subnooc.com/favicon.ico",
+  copyright: "All rights reserved 2023, Nooc",
   author: {
     name: "Nooc",
     email: "nooc@nooc.ink",
-    link: "https://blog.example.com",
+    link: "https://nooc.ink",
   },
 });
 
@@ -32,7 +32,7 @@ const remark = await unified()
 allPosts
   .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
   .forEach((post) => {
-    const url = `https://subjective.world/${post._raw.flattenedPath}`;
+    const url = `https://subnooc.com/${post._raw.flattenedPath}`;
     feed.addItem({
       id: url,
       link: url,

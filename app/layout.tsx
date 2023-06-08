@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     types: {
-      "application/rss+xml": "https://subjective.world/rss.xml",
+      "application/rss+xml": "https://subnooc.com/rss.xml",
     },
   },
   keywords: [
