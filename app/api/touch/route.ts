@@ -6,12 +6,6 @@ export const revalidate = 5;
 
 export const runtime = "edge";
 
-export type Visitor = {
-  country: string;
-  city: string | undefined;
-  flag: string | undefined;
-};
-
 const MOCK_RESPONSE = {
   totalVisits: 123,
   lastVisitor: {
@@ -26,13 +20,19 @@ export async function GET(request: NextRequest) {
     return new Response(JSON.stringify(MOCK_RESPONSE));
   }
 
-  const [lastVisitor, currentVisitor] = await redis.mget<Visitor[]>(
-    redis.KEY_LAST_VISITOR,
-    redis.KEY_CURRENT_VISITOR
-  );
+  const lastVisitor = await redis.get(redis.KEY_LAST_VISITOR);
 
-  if (currentVisitor) {
-    await redis.set(redis.KEY_LAST_VISITOR, currentVisitor);
+  const geo = request.geo;
+
+  if (geo) {
+    const country = geo.country;
+    const city = geo.city;
+
+    const countryInfo = countries.find((x) => x.cca2 === country);
+    if (countryInfo) {
+      const flag = countryInfo.flag;
+      await redis.set(redis.KEY_LAST_VISITOR, { country, city, flag });
+    }
   }
 
   return new Response(

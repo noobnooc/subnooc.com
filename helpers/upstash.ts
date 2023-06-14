@@ -8,7 +8,6 @@ export const redis = Object.assign(
   }),
   {
     KEY_TOTAL_VISITS: "total-visits",
-    KEY_CURRENT_VISITOR: "current-visitor",
     KEY_LAST_VISITOR: "last-visitor",
   }
 );
