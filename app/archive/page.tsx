@@ -83,10 +83,8 @@ export default function Home() {
         <ul>
           {categoryGroupedPosts.map(({ category, posts }) => (
             <li key={category}>
-              <Link href={`/category/${encodeURIComponent(category)}`}>
-                {category}
-              </Link>
-              ：{posts.length} 篇
+              <Link href={`/category/${category}`}>{category}</Link>：
+              {posts.length} 篇
             </li>
           ))}
         </ul>
