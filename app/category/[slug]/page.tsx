@@ -73,7 +73,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams(): Promise<PostProps["params"][]> {
   return allPosts.map((post) => ({
-    slug: post.category,
+    slug: encodeURIComponent(post.category),
   }));
 }
 

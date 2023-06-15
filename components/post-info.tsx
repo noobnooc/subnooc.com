@@ -35,7 +35,7 @@ export function PostInfo({
       {!hideCategory ? (
         <Link
           className="flex items-center text-inherit no-underline"
-          href={`/category/${post.category}`}
+          href={`/category/${encodeURIComponent(post.category)}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
