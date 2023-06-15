@@ -110,12 +110,12 @@ export default function Home() {
         统计
       </h3>
       <p>
-        共计 {allPosts.length} 篇博客，
+        共计 {allPosts.length} 篇文章，
         {allPosts.reduce(
           (total, current) => total + countWords(current.body.raw),
           0
         )}
-        &nbsp;个字。
+        &nbsp;字。
       </p>
       <h3 className="flex items-center">
         <svg
@@ -139,7 +139,7 @@ export default function Home() {
       </p>
       <ul>
         <li>
-          <a href="https://firewood.news">积薪</a>•
+          <a href="https://firewood.news">积薪</a> •
           这不是一个独立博客，而是一个独立博客收集网站。我很喜欢它的页面设计，在上面也能发现非常多优质的博客。
         </li>
         <li>
