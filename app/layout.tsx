@@ -71,11 +71,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     height={36}
                     alt="网站图标"
                   />
-                  <span className="text-lg ml-2 font-bold">主观世界</span>
+                  <span className="hidden sm:inline text-lg ml-2 font-bold">
+                    主观世界
+                  </span>
                 </Link>
                 <nav className="flex items-center ml-auto text-sm font-medium space-x-6">
                   <Link className="no-underline" href="/">
                     博客
+                  </Link>
+                  <Link className="no-underline" href="/archive">
+                    档案
                   </Link>
                   <Link className="no-underline" href="/about">
                     关于
