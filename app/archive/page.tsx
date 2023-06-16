@@ -1,4 +1,5 @@
 import { Post, allPosts } from "@/.contentlayer/generated";
+import { getCategoryInfo } from "@/helpers/category";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -83,8 +84,10 @@ export default function Home() {
         <ul>
           {categoryGroupedPosts.map(({ category, posts }) => (
             <li key={category}>
-              <Link href={`/category/${category}`}>{category}</Link>：
-              {posts.length} 篇
+              <Link href={`/category/${category}`}>
+                {getCategoryInfo(category).displayName}
+              </Link>
+              ：{posts.length} 篇
             </li>
           ))}
         </ul>
