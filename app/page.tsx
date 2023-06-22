@@ -11,9 +11,9 @@ export default function Home() {
         .map((post) => (
           <article key={post._id}>
             <Link href={post.slug}>
-              <h2 className="font-serif font-bold">{post.title}</h2>
+              <h2 className="font-serif font-bold mb-4">{post.title}</h2>
             </Link>
-            {post.description && <p>{post.description}</p>}
+            {post.description && <p className="mt-4">{post.description}</p>}
             <PostInfo className="-mt-2" post={post} />
           </article>
         ))}
