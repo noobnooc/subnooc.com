@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 export const revalidate = 5;
 
 export async function GET(request: Request) {
