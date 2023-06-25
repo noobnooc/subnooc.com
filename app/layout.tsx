@@ -15,6 +15,15 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "主观世界",
   description: "走出唯一真理观",
+  applicationName: "主观世界",
+  themeColor: "#18181b",
+  creator: "Nooc",
+  publisher: "Nooc",
+  appleWebApp: {
+    capable: true,
+    title: "主观世界",
+    statusBarStyle: "black-translucent",
+  },
   authors: {
     name: "Nooc",
     url: "https://nooc.ink",
