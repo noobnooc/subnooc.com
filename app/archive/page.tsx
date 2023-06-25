@@ -1,5 +1,6 @@
 import { Post, allPosts } from "@/.contentlayer/generated";
 import { getCategoryInfo } from "@/helpers/category";
+import { fillKeywords } from "@/helpers/keywords";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -41,20 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: "/twitter-image.png",
   },
-  keywords: [
-    "主观世界",
-    "主观世界档案馆",
-    "档案馆",
-    "档案",
-    "Subjective World",
-    "Nooc",
-    "Blog",
-    "博客",
-    "个人博客",
-    "独立博客",
-    "读书",
-    "感想",
-  ],
+  keywords: fillKeywords(["档案", "归档", "档案馆", "分类"]),
 };
 
 export default function Home() {

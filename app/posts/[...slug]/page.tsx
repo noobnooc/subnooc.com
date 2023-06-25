@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { Mdx } from "@/components/mdx-components";
 import { PostInfo } from "@/components/post-info";
 import { QRCodeSVG } from "qrcode.react";
+import { fillKeywords } from "@/helpers/keywords";
 
 interface PostProps {
   params: {
@@ -51,6 +52,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       images: "/twitter-image.png",
     },
+    keywords: fillKeywords(["文章", "博客", "博文", ...(post.keywords ?? [])]),
   };
 }
 

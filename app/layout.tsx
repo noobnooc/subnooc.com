@@ -8,6 +8,7 @@ import { Analytics } from "@/components/analytics";
 import { ModeToggle } from "@/components/mode-toggle";
 import icon from "./icon.png";
 import { Status } from "@/components/status";
+import { fillKeywords } from "@/helpers/keywords";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,17 +34,7 @@ export const metadata: Metadata = {
       "application/rss+xml": "https://subnooc.com/rss.xml",
     },
   },
-  keywords: [
-    "主观世界",
-    "Subjective World",
-    "Nooc",
-    "Blog",
-    "博客",
-    "个人博客",
-    "独立博客",
-    "读书",
-    "感想",
-  ],
+  keywords: fillKeywords(),
 };
 
 interface RootLayoutProps {

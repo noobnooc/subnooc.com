@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { allPages } from "contentlayer/generated";
 
 import { Mdx } from "@/components/mdx-components";
+import { fillKeywords } from "@/helpers/keywords";
 
 interface PageProps {
   params: {
@@ -33,6 +34,7 @@ export async function generateMetadata({
   return {
     title: page.title,
     description: page.description,
+    keywords: fillKeywords(page.keywords),
   };
 }
 

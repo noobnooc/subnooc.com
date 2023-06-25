@@ -6,6 +6,7 @@ import { PostInfo } from "@/components/post-info";
 import { compareDesc } from "date-fns";
 import Link from "next/link";
 import { getCategoryInfo } from "@/helpers/category";
+import { fillKeywords } from "@/helpers/keywords";
 
 interface PostProps {
   params: {
@@ -57,20 +58,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       images: "/twitter-image.png",
     },
-    keywords: [
-      "主观世界",
-      "分类",
-      categoryDisplayName,
-      "文章",
-      "Subjective World",
-      "Nooc",
-      "Blog",
-      "博客",
-      "个人博客",
-      "独立博客",
-      "读书",
-      "感想",
-    ],
+    keywords: fillKeywords([categoryDisplayName, "分类", "类别", "文章"]),
   };
 }
 

@@ -24,6 +24,12 @@ export const Page = defineDocumentType(() => ({
     description: {
       type: "string",
     },
+    keywords: {
+      type: "list",
+      of: {
+        type: "string",
+      },
+    },
   },
   computedFields,
 }));
@@ -47,6 +53,12 @@ export const Post = defineDocumentType(() => ({
     category: {
       type: "string",
       required: true,
+    },
+    keywords: {
+      type: "list",
+      of: {
+        type: "string",
+      },
     },
     wechatLink: {
       type: "string",
