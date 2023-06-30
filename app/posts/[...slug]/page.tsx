@@ -82,7 +82,35 @@ export default async function PostPage({ params }: PostProps) {
         <hr className="my-4" />
         <Mdx code={post.body.code} />
       </article>
-      <div className="flex border self-center w-fit items-stretch rounded px-4 py-3 gap-4 my-2">
+      <hr className="my-4" />
+      <span>
+        如果你喜欢这一篇文章
+        <br />
+        可以微信扫描二维码打赏一个
+        <br />
+        或者分享到&nbsp;
+        <a
+          href={`https://twitter.com/share?text=${encodeURIComponent(
+            `《${post.title}》这篇文章还不错 @noobnooc`
+          )}&url=${encodeURIComponent(`https://noobnooc.com${post.slug}`)}`}
+          target="_blank"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="inline h-4 w-4 mr-1"
+          >
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+          </svg>
+          Twitter
+        </a>
+      </span>
+      <div className="flex border w-fit items-stretch rounded px-4 py-3 gap-4 my-2">
         <QRCodeSVG
           className="w-20 h-20"
           value={
@@ -125,6 +153,7 @@ export default async function PostPage({ params }: PostProps) {
           </div>
         </div>
       </div>
+      <hr className="my-4" />
     </div>
   );
 }
