@@ -92,7 +92,7 @@ export default async function PostPage({ params }: PostProps) {
         <a
           href={`https://twitter.com/share?text=${encodeURIComponent(
             `《${post.title}》这篇文章还不错 @noobnooc`
-          )}&url=${encodeURIComponent(`https://noobnooc.com${post.slug}`)}`}
+          )}&url=${encodeURIComponent(`https://subnooc.com${post.slug}`)}`}
           target="_blank"
         >
           <svg
