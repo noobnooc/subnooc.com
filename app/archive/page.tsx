@@ -1,6 +1,8 @@
 import { Post, allPosts } from "@/.contentlayer/generated";
+import { ARCHIVE } from "@/data/archive";
 import { getCategoryInfo } from "@/helpers/category";
 import { fillKeywords } from "@/helpers/keywords";
+import { prettifyNumber } from "@/helpers/math";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -42,7 +44,18 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: "/twitter-image.png",
   },
-  keywords: fillKeywords(["档案", "归档", "档案馆", "分类"]),
+  keywords: fillKeywords([
+    "档案",
+    "归档",
+    "档案馆",
+    "分类",
+    ...ARCHIVE.reading.map((reading) => reading.title),
+    ...ARCHIVE.films.map((film) => film.title),
+    ...ARCHIVE.music.flatMap((music) =>
+      music.title.split("/").map((author) => author.trim())
+    ),
+    ...ARCHIVE.suggest.map((suggest) => suggest.title),
+  ]),
 };
 
 export default function Home() {
@@ -103,11 +116,13 @@ export default function Home() {
         </h3>
         <p>
           共计 {allPosts.length} 篇文章，
-          {allPosts.reduce(
-            (total, current) => total + countWords(current.body.raw),
-            0
+          {prettifyNumber(
+            allPosts.reduce(
+              (total, current) => total + countWords(current.body.raw),
+              0
+            )
           )}
-          &nbsp;字。
+          字。
         </p>
         <h3 id="recent-books" className="flex items-center">
           <svg
@@ -128,14 +143,13 @@ export default function Home() {
         </h3>
         <p>这里会记录一些我最近看过，并且觉得还不错的书籍。</p>
         <ul>
-          <li>
-            《夜晚的潜水艇》•
-            如果你也喜欢博尔赫斯，那么这本短篇小说集一定不容错过。如果你不喜欢博尔赫斯，那么看完这本小说集你会喜欢上他的。
-          </li>
-          <li>
-            《Make Something Wonderful》•
-            这本书集合了很多乔布斯生前的公开照片、电子邮件和演讲等信息。
-          </li>
+          {ARCHIVE.reading.map((reading) => {
+            return (
+              <li key={reading.title}>
+                《{reading.title}》• {reading.summary}
+              </li>
+            );
+          })}
         </ul>
         <h3 id="recent-films" className="flex items-center">
           <svg
@@ -156,8 +170,13 @@ export default function Home() {
         </h3>
         <p>这里会记录一些我最近看过，并且觉得还不错的电影和电视剧。</p>
         <ul>
-          <li>《漫长的季节》• 近几年看过最喜欢的国产剧。</li>
-          <li>《深海》• 童心未泯的我，真的是喜欢这种花花绿绿的画风。</li>
+          {ARCHIVE.films.map((film) => {
+            return (
+              <li key={film.title}>
+                《{film.title}》• {film.summary}
+              </li>
+            );
+          })}
         </ul>
         <h3 id="music" className="flex items-center">
           <svg
@@ -177,29 +196,13 @@ export default function Home() {
           喜欢的音乐
         </h3>
         <ul>
-          <li>
-            John Lennon •
-            最喜欢他的《Imagine》，希望有一天这个世界真能像他描述的那样。
-          </li>
-          <li>万能青年旅店 / 好乐团 • 不知道怎么形容。</li>
-          <li>
-            Humbert Humbert / KOKIA / Rimi Natsukawa •
-            来自日本的选手，从高中听到了现在。甚至还买过他们的实体唱片。
-          </li>
-          <li>
-            DEPAPEPE / 久石让 / 姬神 •
-            都是来自日本的纯乐器音乐选手，都非常喜欢。
-          </li>
-          <li>茄子蛋 / 美秀集团 / 草东没有派对 • 他们说他们是摇滚。</li>
-          <li>
-            Sufjan Stevens / Fleurie / Billie Eilish / Sophie Zelmani •
-            英文歌手不太能记住名字，这是一些印象比较深的。
-          </li>
-          <li>
-            莫文蔚 / 陈绮贞 / 王若琳 •
-            其实我是不太喜欢情歌的，但她们的声音是真的好听。
-          </li>
-          <li>中岛美雪 / 邓丽君 / 伍佰 • 老歌偶尔听听也很是喜欢。</li>
+          {ARCHIVE.music.map((music) => {
+            return (
+              <li key={music.title}>
+                {music.title} • {music.summary}
+              </li>
+            );
+          })}
         </ul>
         <h3 className="flex items-center">
           <svg
@@ -222,14 +225,13 @@ export default function Home() {
           如果你想看看其他和本站类似的独立博客，这里推荐一些我偶尔会看，并且觉得还不错的：
         </p>
         <ul>
-          <li>
-            <a href="https://firewood.news">积薪</a> •
-            这不是一个独立博客，而是一个独立博客收集网站。我很喜欢它的页面设计，在上面也能发现非常多优质的博客。
-          </li>
-          <li>
-            <a href="https://rercel.com">Rercel</a> • 不知道这个名字是不是在碰瓷
-            Vercel，好在他的内容是不错的啦。作者主要写一些法律和哲学相关的话题，偶尔也涉及计算机技术。
-          </li>
+          {ARCHIVE.suggest.map((suggest) => {
+            return (
+              <li key={suggest.title}>
+                <a href={suggest.link}>{suggest.title}</a> • {suggest.summary}
+              </li>
+            );
+          })}
         </ul>
       </article>
     </div>

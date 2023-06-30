@@ -11,9 +11,9 @@ export function toFixed(value: number, n = 1) {
 
 export function prettifyNumber(n: number): string {
   if (Math.abs(n) >= 100000000) {
-    return toFixed(n / 100000000) + "亿";
+    return toFixed(n / 100000000) + " 亿";
   } else if (Math.abs(n) >= 10000) {
-    return toFixed(n / 10000) + "万";
+    return toFixed(n / 10000) + " 万";
   } else {
     return Intl.NumberFormat("en-US").format(n);
   }
