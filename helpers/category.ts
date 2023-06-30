@@ -16,6 +16,10 @@ const CATEGORIES: Category[] = [
     name: "translation",
     displayName: "翻译",
   },
+  {
+    name: "reading",
+    displayName: "读书",
+  },
 ];
 
 export function getCategoryInfo(name: string): Category {
