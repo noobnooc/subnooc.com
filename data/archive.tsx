@@ -32,7 +32,7 @@ export const ARCHIVE = {
     {
       title: "John Lennon / Pink Floyd",
       summary:
-        "喜欢 Lennon 的《Imagine》，喜欢 Floyd 的《Another Brick in the Wall》。",
+        "喜欢 Lennon 的《Imagine》，喜欢 Pink Floyd 的《Another Brick in the Wall》。",
     },
     {
       title: "万能青年旅店 / 椅子乐团 / 贰佰",

@@ -41,12 +41,12 @@ export async function generateMetadata({
       url: "https://nooc.ink",
     },
     openGraph: {
-      title: `${post.title} - 主观世界`,
+      title: `${post.title} | ${post.description} - 主观世界`,
       description: `${post.description} - 主观世界`,
       images: "/opengraph-image.png",
     },
     twitter: {
-      title: `${post.title} - 主观世界`,
+      title: `${post.title} | ${post.description} - 主观世界`,
       description: `${post.description} - 主观世界`,
       site: "@noobnooc",
       card: "summary_large_image",
@@ -86,9 +86,7 @@ export default async function PostPage({ params }: PostProps) {
       <span>
         如果你喜欢这一篇文章
         <br />
-        可以微信扫描二维码打赏一个
-        <br />
-        或者分享到&nbsp;
+        可以分享到&nbsp;
         <a
           href={`https://twitter.com/share?text=${encodeURIComponent(
             `《${post.title}》这篇文章还不错 @noobnooc`
@@ -109,6 +107,8 @@ export default async function PostPage({ params }: PostProps) {
           </svg>
           Twitter
         </a>
+        <br />
+        或者微信扫描二维码打赏一个
       </span>
       <div className="flex border w-fit items-stretch rounded px-4 py-3 gap-4 my-2">
         <QRCodeSVG
