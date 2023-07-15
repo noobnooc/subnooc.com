@@ -10,7 +10,7 @@ const CATEGORIES: Category[] = [
   },
   {
     name: "chatter",
-    displayName: "碎碎念",
+    displayName: "自言自语",
   },
   {
     name: "translation",
