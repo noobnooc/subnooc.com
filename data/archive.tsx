@@ -65,6 +65,11 @@ export const ARCHIVE = {
   ],
   suggest: [
     {
+      title: "莫比乌斯",
+      link: "https://onojyun.com",
+      summary: "更新非常频繁的一个博客，内容也很是不错。",
+    },
+    {
       title: "积薪",
       link: "https://firewood.news",
       summary:

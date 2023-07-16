@@ -14,11 +14,11 @@ const CATEGORIES: Category[] = [
   },
   {
     name: "translation",
-    displayName: "翻译",
+    displayName: "文本翻译",
   },
   {
     name: "reading",
-    displayName: "读书",
+    displayName: "读读写写",
   },
 ];
 
