@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: "独立博客「主观世界」的档案馆",
   authors: {
     name: "Nooc",
-    url: "https://nooc.ink",
+    url: "https://nooc.me",
   },
   openGraph: {
     title: "档案馆 - 主观世界",

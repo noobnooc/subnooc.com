@@ -44,7 +44,7 @@ export async function generateMetadata({
     description: `${categoryDisplayName}分类下的文章`,
     authors: {
       name: "Nooc",
-      url: "https://nooc.ink",
+      url: "https://nooc.me",
     },
     category: categoryDisplayName,
     openGraph: {

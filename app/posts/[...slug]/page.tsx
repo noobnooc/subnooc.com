@@ -38,7 +38,7 @@ export async function generateMetadata({
     description: post.description,
     authors: {
       name: "Nooc",
-      url: "https://nooc.ink",
+      url: "https://nooc.me",
     },
     openGraph: {
       title: `${post.title} | ${post.description} - 主观世界`,

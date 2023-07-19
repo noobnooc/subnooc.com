@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   authors: {
     name: "Nooc",
-    url: "https://nooc.ink",
+    url: "https://nooc.me",
   },
   openGraph: {
     title: "主观世界 - 走出唯一真理观",
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <main>{children}</main>
             <footer className="flex flex-col items-center justify-center my-4">
               <nav className="text-sm font-medium space-x-6 my-10">
-                <a href="https://nooc.ink">
+                <a href="https://nooc.me">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   </svg>
                   主页
                 </a>
-                <a href="mailto:nooc@nooc.ink">
+                <a href="mailto:nooc@nooc.me">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

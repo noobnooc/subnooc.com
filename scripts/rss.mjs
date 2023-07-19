@@ -18,8 +18,8 @@ const feed = new Feed({
   copyright: "All rights reserved 2023, Nooc",
   author: {
     name: "Nooc",
-    email: "nooc@nooc.ink",
-    link: "https://nooc.ink",
+    email: "nooc@nooc.me",
+    link: "https://nooc.me",
   },
 });
 
@@ -43,8 +43,8 @@ allPosts
       author: [
         {
           name: "Nooc",
-          email: "nooc@nooc.ink",
-          link: "https://nooc.ink",
+          email: "nooc@nooc.me",
+          link: "https://nooc.me",
         },
       ],
     });
