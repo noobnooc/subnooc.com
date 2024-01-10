@@ -20,6 +20,10 @@ const CATEGORIES: Category[] = [
     name: "reading",
     displayName: "读读写写",
   },
+  {
+    name: 'recalls',
+    displayName: '回头看看',
+  }
 ];
 
 export function getCategoryInfo(name: string): Category {
