@@ -23,6 +23,10 @@ const CATEGORIES: Category[] = [
   {
     name: 'recalls',
     displayName: '回头看看',
+  },
+  {
+    name: 'verses',
+    displayName: '也许是诗',
   }
 ];
 
