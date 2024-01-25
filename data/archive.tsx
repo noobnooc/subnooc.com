@@ -1,13 +1,18 @@
 export const ARCHIVE = {
   reading: [
     {
+      title: "伊凡·伊利奇之死",
+      summary:
+        "托尔斯泰后期的一篇中篇小说，从将死之人的视角阐述了一些作者向死而生的观点。",
+    },
+    {
       title: "孤筏重洋",
-      summary: "一场为了证明自己的狂野旅程。据说海子在生命的最后一刻还在阅读。",
+      summary:
+        "一场为了证明自己的狂野旅程。海子在生命的最后一刻随身携带的书之一。",
     },
     {
       title: "夜晚的潜水艇",
-      summary:
-        "如果你也喜欢博尔赫斯，那么这本短篇小说集一定不容错过。如果你不喜欢博尔赫斯，那么看完这本小说集你会喜欢上他的。",
+      summary: "一本有点博尔赫斯风格的短篇小说集。",
     },
     {
       title: "Make Something Wonderful",
@@ -15,6 +20,11 @@ export const ARCHIVE = {
     },
   ],
   films: [
+    {
+      title: "怪物",
+      summary:
+        "我最喜欢的导演之一是枝裕和的作品。我们或多或少在其他人眼中是某种形式的怪物，但那又如何呢。",
+    },
     {
       title: "辛普森一家",
       summary: "重新开始看这部比我还老的动画。",
@@ -30,12 +40,7 @@ export const ARCHIVE = {
   ],
   music: [
     {
-      title: "John Lennon / Pink Floyd",
-      summary:
-        "喜欢 Lennon 的《Imagine》，喜欢 Pink Floyd 的《Another Brick in the Wall》。",
-    },
-    {
-      title: "万能青年旅店 / 椅子乐团 / 贰佰",
+      title: "万能青年旅店 / 椅子乐团 / 草东没有派对",
       summary: "摇滚与民谣。",
     },
     {
@@ -49,10 +54,6 @@ export const ARCHIVE = {
     {
       title: "Sufjan Stevens / Fleurie / Billie Eilish / Sophie Zelmani",
       summary: "英文歌手不太能记住名字，这是一些印象比较深的。",
-    },
-    {
-      title: "茄子蛋 / 美秀集团 / 草东没有派对",
-      summary: "他们说他们是摇滚。",
     },
     {
       title: "莫文蔚 / 陈绮贞 / 王若琳",
@@ -76,10 +77,9 @@ export const ARCHIVE = {
         "这不是一个独立博客，而是一个独立博客收集网站。我很喜欢它的页面设计，在上面也能发现非常多优质的博客。",
     },
     {
-      title: "Rercel",
-      link: "https://rercel.com",
-      summary:
-        "不知道这个名字是不是在碰瓷 Vercel，好在他的内容是不错的啦。作者主要写一些法律和哲学相关的话题，偶尔也涉及计算机技术。",
+      title: "游民CO",
+      link: "https://youmin.co",
+      summary: "我做的一个收集游民相关信息的网站。",
     },
   ],
 };
