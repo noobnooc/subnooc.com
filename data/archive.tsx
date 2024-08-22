@@ -1,6 +1,10 @@
 export const ARCHIVE = {
   reading: [
     {
+      title: "涅朵奇卡",
+      summary: "有的人在幻想中越走越远，最终成了幻想家。",
+    },
+    {
       title: "伊凡·伊利奇之死",
       summary:
         "托尔斯泰后期的一篇中篇小说，从将死之人的视角阐述了一些作者向死而生的观点。",
@@ -20,6 +24,10 @@ export const ARCHIVE = {
     },
   ],
   films: [
+    {
+      title: "宇宙探索编辑部",
+      summary: "长路漫漫地奔赴西方取经，却发现答案就在身边。",
+    },
     {
       title: "怪物",
       summary:
