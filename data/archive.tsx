@@ -5,6 +5,11 @@ export const ARCHIVE = {
       summary: "有的人在幻想中越走越远，最终成了幻想家。",
     },
     {
+      title: "窄门",
+      summary:
+        "当信仰与世俗发生冲突，我们是该选择继续追随上帝那从未回应过的许诺，还是回归世俗生活里唾手可得的幸福。",
+    },
+    {
       title: "伊凡·伊利奇之死",
       summary:
         "托尔斯泰后期的一篇中篇小说，从将死之人的视角阐述了一些作者向死而生的观点。",
@@ -77,12 +82,6 @@ export const ARCHIVE = {
       title: "莫比乌斯",
       link: "https://onojyun.com",
       summary: "更新非常频繁的一个博客，内容也很是不错。",
-    },
-    {
-      title: "积薪",
-      link: "https://firewood.news",
-      summary:
-        "这不是一个独立博客，而是一个独立博客收集网站。我很喜欢它的页面设计，在上面也能发现非常多优质的博客。",
     },
     {
       title: "游民CO",
