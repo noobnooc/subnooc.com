@@ -1,0 +1,23 @@
+- slug: blog-journey
+  name: 博客历程
+  description: 分享关于这个博客网站的一些历程和心得
+
+- slug: chatter
+  name: 自言自语
+  description: 一些自言自语，请勿当真
+
+- slug: translation
+  name: 文本翻译
+  description: 看到一些有意思的英文文章，可能会翻译一下发到这里
+
+- slug: reading
+  name: 读读写写
+  description: 分享一些读书笔记
+
+- slug: recalls
+  name: 回头看看
+  description: 回顾一些过去的事情
+
+- slug: verses
+  name: 也许是诗
+  description: 这都是写的个啥

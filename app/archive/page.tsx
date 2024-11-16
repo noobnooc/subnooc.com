@@ -1,29 +1,11 @@
-import { Post, allPosts } from "@/.contentlayer/generated";
+import { posts, categories } from "@/.velite";
 import { ARCHIVE } from "@/data/archive";
-import { getCategoryInfo } from "@/helpers/category";
 import { fillKeywords } from "@/helpers/keywords";
 import { prettifyNumber } from "@/helpers/math";
 import { Metadata } from "next";
 import Link from "next/link";
 
-const categoryGroupedPosts = allPosts
-  .reduce<
-    {
-      category: string;
-      posts: Post[];
-    }[]
-  >((acc, item) => {
-    const existingItem = acc.find((entry) => entry.category === item.category);
-
-    if (existingItem) {
-      existingItem.posts.push(item);
-    } else {
-      acc.push({ category: item.category, posts: [item] });
-    }
-
-    return acc;
-  }, [])
-  .sort((a, b) => b.posts.length - a.posts.length);
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "主观世界档案馆",
@@ -83,12 +65,10 @@ export default function Home() {
           分类
         </h3>
         <ul>
-          {categoryGroupedPosts.map(({ category, posts }) => (
-            <li key={category}>
-              <Link href={`/category/${category}`}>
-                {getCategoryInfo(category).displayName}
-              </Link>
-              ：{posts.length} 篇
+          {categories.map((category) => (
+            <li key={category.slug}>
+              <Link href={`/category/${category.slug}`}>{category.name}</Link>：
+              {category.count} 篇
             </li>
           ))}
         </ul>
@@ -115,12 +95,9 @@ export default function Home() {
           统计
         </h3>
         <p>
-          共计 {allPosts.length} 篇文章，
+          共计 {posts.length} 篇文章，
           {prettifyNumber(
-            allPosts.reduce(
-              (total, current) => total + countWords(current.body.raw),
-              0
-            )
+            posts.reduce((total, current) => total + countWords(current.raw), 0)
           )}
           字。
         </p>

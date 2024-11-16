@@ -3,13 +3,13 @@
 import { prettifyNumber } from "@/helpers/math";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import { Online } from "./online";
 
 export const revalidate = 5;
 
 export function Status({ className }: { className?: string }) {
   const [status, setStatus] = useState({
     totalVisits: 0,
+    onlineCount: 1,
     lastVisitor: {
       city: "Chengdu",
       country: "CN",
@@ -19,9 +19,9 @@ export function Status({ className }: { className?: string }) {
 
   useEffect(() => {
     fetch("/api/touch").then(async (resp) => {
-      const status = await resp.json();
+      const result = (await resp.json()) as typeof status;
 
-      setStatus(status);
+      setStatus(result);
     });
   }, []);
 
@@ -42,7 +42,14 @@ export function Status({ className }: { className?: string }) {
             d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
           />
         </svg>
-        <Online />
+        <div className={classNames("text-sm flex items-center")}>
+          有 {status.onlineCount} 人正在浏览
+          <span
+            className={classNames(
+              "rounded-full inline-block w-2 h-2 ml-2 bg-green-500"
+            )}
+          />
+        </div>
       </div>
       <div className="flex items-center">
         <svg

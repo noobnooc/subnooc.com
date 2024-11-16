@@ -1,6 +1,7 @@
 ---
 title: 于是我又换了一个域名
 description: 域名这东西，得一月一换。
+slug: domain-migrated-to-subnooc-com
 category: blog-journey
 date: "2023-06-16"
 keywords:

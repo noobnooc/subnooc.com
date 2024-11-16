@@ -1,6 +1,7 @@
 ---
 title: 乘上一叶轻舟
 description: 乘上划过湖面的一叶轻舟，在前行之中我们终会找到自己想去的方向。
+slug: a-boat-on-the-lake
 category: chatter
 date: "2024-01-18"
 wechatLink: https://mp.weixin.qq.com/s/Zt8Db-rc45qsWPGjfCRuCg

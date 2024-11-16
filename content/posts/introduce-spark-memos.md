@@ -1,6 +1,7 @@
 ---
 title: 我停止写东西了吗
 description: 已经快半年没有发东西了，但我并没有停止记录。
+slug: introduce-spark-memos
 category: chatter
 date: "2024-08-10"
 keywords:

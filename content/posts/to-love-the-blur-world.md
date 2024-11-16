@@ -1,6 +1,7 @@
 ---
 title: 爱上失焦的世界
 description: 像一个小孩一样，去想象这个世界，爱上失焦的世界。
+slug: to-love-the-blur-world
 category: chatter
 date: "2023-06-25"
 keywords:

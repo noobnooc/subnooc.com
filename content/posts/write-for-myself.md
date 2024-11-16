@@ -1,6 +1,7 @@
 ---
 title: 为自己而写
 description: 这篇文章探讨了写作的初衷、自我探索与他人反馈之间的关系，以及在写作过程中应该如何保持真实和自洽。
+slug: write-for-myself
 category: chatter
 date: "2024-03-20"
 keywords:

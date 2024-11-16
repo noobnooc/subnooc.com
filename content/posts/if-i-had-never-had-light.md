@@ -1,6 +1,7 @@
 ---
 title: 假如我不曾有过光明
 description: 假如我不曾有过光明，是否会更加珍惜阳光。
+slug: if-i-had-never-had-light
 category: verses
 date: "2024-01-12 02:30:00"
 wechatLink: https://mp.weixin.qq.com/s/NAYqCRLyQDZ8fcUZ3Nljrw

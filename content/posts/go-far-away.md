@@ -1,6 +1,7 @@
 ---
 title: 如果可以，请去远方看看
 description: 远方不必长途跋涉，远方无处不在。
+slug: go-far-away
 category: chatter
 date: "2023-09-07"
 wechatLink: https://mp.weixin.qq.com/s/Wma5uSgV0mBHu3B7Yc__ZA

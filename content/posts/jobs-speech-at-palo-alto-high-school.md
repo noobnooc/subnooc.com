@@ -1,6 +1,7 @@
 ---
 title: 乔布斯在 Palo Alto 高中的演讲
 description: What you follow with your heart will indeed come back to make your life much richer.
+slug: jobs-speech-at-palo-alto-high-school
 category: translation
 date: "2023-06-02"
 wechatLink: https://mp.weixin.qq.com/s/grtjQeCryZR3BVEvJ-Yprg

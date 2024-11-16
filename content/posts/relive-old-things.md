@@ -1,6 +1,7 @@
 ---
 title: 最近喜欢上了玩一些老游戏
 description: 当我玩老游戏机时我在玩些什么。
+slug: relive-old-things
 category: chatter
 date: "2024-08-23"
 keywords:

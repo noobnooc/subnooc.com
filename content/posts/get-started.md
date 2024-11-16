@@ -1,6 +1,7 @@
 ---
 title: 主观世界｜走出唯一真理观
 description: 博客开业大酬宾，免费看免费看啦。
+slug: get-started
 category: blog-journey
 date: "2023-05-24"
 wechatLink: https://mp.weixin.qq.com/s/dsr4N3nBn1ETeEbDkiIGMw

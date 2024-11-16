@@ -1,6 +1,7 @@
 ---
 title: 关于读书和躺平的一些想法
 description: 听了一场分享会后，关于读书和躺平的一些想法。
+slug: some-thoughts-on-reading-and-lying-flat
 category: chatter
 date: "2023-07-15"
 wechatLink: https://mp.weixin.qq.com/s/dUR3v7_wHLdVYv0uS9dhCg

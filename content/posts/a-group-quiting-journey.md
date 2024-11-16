@@ -1,6 +1,7 @@
 ---
 title: 记一次带着立场的退群
 description: 最近退了一个群，于是有一些带着立场的想法。
+slug: a-group-quiting-journey
 category: chatter
 date: "2023-06-22"
 keywords:

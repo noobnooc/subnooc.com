@@ -1,82 +1,75 @@
 import { notFound } from "next/navigation";
-import { allPosts } from "contentlayer/generated";
 
 import { Metadata } from "next";
 import { PostInfo } from "@/components/post-info";
-import { compareDesc } from "date-fns";
 import Link from "next/link";
-import { getCategoryInfo } from "@/helpers/category";
 import { fillKeywords } from "@/helpers/keywords";
+import { categories, posts } from "@/.velite";
 
-interface PostProps {
-  params: {
-    slug: string;
-  };
-}
+export const runtime = "edge";
 
-async function getPostsFromParams(params: PostProps["params"]) {
-  const category = decodeURIComponent(params.slug);
-  const posts = allPosts.filter((post) => post.category === category);
+type Params = Promise<{ slug: string }>;
 
-  if (!posts || !posts.length) {
+async function getPostsFromParams(categorySlug: string) {
+  const categoryPosts = posts.filter((post) => post.category === categorySlug);
+
+  const category = categories.find(
+    (category) => category.slug === categorySlug
+  );
+
+  if (!category) {
     null;
   }
 
   return {
     category: category,
-    posts,
+    posts: categoryPosts,
   };
 }
 
 export async function generateMetadata({
   params,
-}: PostProps): Promise<Metadata> {
-  const { category, posts } = await getPostsFromParams(params);
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { category, posts } = await getPostsFromParams(slug);
 
-  if (!posts) {
+  if (!category) {
     return {};
   }
 
-  const categoryDisplayName = getCategoryInfo(category).displayName;
-
   return {
-    title: `${categoryDisplayName} - 主观世界`,
-    description: `${categoryDisplayName}分类下的文章`,
+    title: `${category.name} - 主观世界`,
+    description: `${category.description} - 主观世界`,
     authors: {
       name: "Nooc",
       url: "https://nooc.me",
     },
-    category: categoryDisplayName,
+    category: category.name,
     openGraph: {
-      title: `${categoryDisplayName} - 主观世界`,
-      description: `${categoryDisplayName}分类下的文章 - 主观世界`,
+      title: `${category.name} - 主观世界`,
+      description: `${category.description} - 主观世界`,
       images: "/opengraph-image.png",
     },
     twitter: {
-      title: `${categoryDisplayName} - 主观世界`,
-      description: `${categoryDisplayName}分类下的文章 - 主观世界`,
+      title: `${category.name} - 主观世界`,
+      description: `${category.description} - 主观世界`,
       site: "@noobnooc",
       card: "summary_large_image",
       images: "/twitter-image.png",
     },
-    keywords: fillKeywords([categoryDisplayName, "分类", "类别", "文章"]),
+    keywords: fillKeywords([category.name, "分类", "类别", "文章"]),
   };
 }
 
-export async function generateStaticParams(): Promise<PostProps["params"][]> {
-  return allPosts.map((post) => ({
-    slug: post.category,
-  }));
-}
+export default async function CategoryPage({ params }: { params: Params }) {
+  const { slug } = await params;
+  const { category, posts } = await getPostsFromParams(slug);
 
-export default async function PostPage({ params }: PostProps) {
-  const { category, posts } = await getPostsFromParams(params);
-
-  if (!posts) {
+  if (!category) {
     notFound();
   }
-
-  const categoryInfo = getCategoryInfo(category);
 
   return (
     <div className="prose dark:prose-invert py-6">
@@ -96,15 +89,15 @@ export default async function PostPage({ params }: PostProps) {
           />
         </svg>
 
-        {categoryInfo.displayName}
+        {category.name}
       </h1>
-      <p className="text-md m-0">{categoryInfo.displayName}分类下的所有文章</p>
+      <p className="text-md m-0">{category.description}</p>
       <hr className="my-6" />
       {posts
-        .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
         .map((post) => (
-          <article key={post._id}>
-            <Link href={post.slug}>
+          <article key={post.slug}>
+            <Link href={post.permalink}>
               <h2 className="font-serif font-bold mb-4">{post.title}</h2>
             </Link>
             {post.description && <p className="mt-4">{post.description}</p>}

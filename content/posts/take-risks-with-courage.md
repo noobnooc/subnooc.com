@@ -1,6 +1,7 @@
 ---
 title: 去冒险吧，带着勇气
 description: 诗人海子与《孤筏重洋》。
+slug: take-risks-with-courage
 category: reading
 date: "2023-06-30"
 wechatLink: https://mp.weixin.qq.com/s/UthTuq6t6bp8z49o4OL4_g

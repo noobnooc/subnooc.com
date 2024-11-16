@@ -1,6 +1,7 @@
 ---
 title: 一场博客的文艺复兴
 description: 我记忆中博客的样子。
+slug: make-blog-great-again
 category: chatter
 date: "2023-06-08"
 wechatLink: https://mp.weixin.qq.com/s/FWTuicJBqnewjyRlrczxkw

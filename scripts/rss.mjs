@@ -1,4 +1,5 @@
-import { compareDesc, parseISO } from "date-fns";
+// @ts-check
+
 import { Feed } from "feed";
 import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { unified } from "unified";
@@ -6,7 +7,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
-import { allPosts } from "../.contentlayer/generated/index.mjs";
+import { readFile } from "fs/promises";
 
 const feed = new Feed({
   title: "主观世界",
@@ -29,16 +30,18 @@ const remark = await unified()
   .use(rehypeSanitize)
   .use(rehypeStringify);
 
-allPosts
-  .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+const posts = JSON.parse(await readFile(".velite/posts.json", "utf8"));
+
+posts
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .forEach((post) => {
-    const url = `https://subnooc.com/${post._raw.flattenedPath}`;
+    const url = `https://subnooc.com/${post.permalink}`;
     feed.addItem({
       id: url,
       link: url,
       title: post.title,
-      description: String(remark.processSync(post.body.raw)),
-      date: parseISO(post.date),
+      description: String(remark.processSync(post.raw)),
+      date: new Date(post.date),
       category: [{ name: post.category }],
       author: [
         {

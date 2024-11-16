@@ -1,21 +1,23 @@
 import { notFound } from "next/navigation";
-import { allPosts } from "contentlayer/generated";
+import { posts } from ".velite";
 
 import { Metadata } from "next";
-import { Mdx } from "@/components/mdx-components";
 import { PostInfo } from "@/components/post-info";
 import { QRCodeSVG } from "qrcode.react";
 import { fillKeywords } from "@/helpers/keywords";
+import classNames from "classnames";
+
+export const runtime = "edge";
 
 interface PostProps {
-  params: {
-    slug: string[];
-  };
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
 async function getPostFromParams(params: PostProps["params"]) {
-  const slug = params?.slug?.join("/");
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const { slug } = await params;
+  const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
     null;
@@ -56,12 +58,6 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<PostProps["params"][]> {
-  return allPosts.map((post) => ({
-    slug: post.slugAsParams.split("/"),
-  }));
-}
-
 export default async function PostPage({ params }: PostProps) {
   const post = await getPostFromParams(params);
 
@@ -80,7 +76,19 @@ export default async function PostPage({ params }: PostProps) {
           </p>
         )}
         <hr className="my-4" />
-        <Mdx code={post.body.code} />
+        <div
+          className={classNames(
+            "prose dark:prose-invert",
+            "prose-headings:font-serif prose-headings:mt-8",
+            "prose-h1:text-3xl",
+            "prose-h2:text-xl",
+            "prose-h3:text-lg",
+            "prose-blockquote:font-normal",
+            "prose-pre:border prose-pre:rounded-xl",
+            "before:prose-p:content-none after:prose-p:content-none"
+          )}
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        ></div>
       </article>
       <a
         className="flex border w-fit items-stretch rounded px-4 py-3 gap-4 my-2 no-underline"
