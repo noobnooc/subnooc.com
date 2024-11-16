@@ -15,8 +15,8 @@ export function Status({ className }: { className?: string }) {
       city: "Chengdu",
       country: "CN",
       flag: "🇨🇳",
+      timestamp: Date.now(),
     },
-    timestamp: Date.now(),
   });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export function Status({ className }: { className?: string }) {
           />
         </div>
       </div>
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -76,8 +76,9 @@ export function Status({ className }: { className?: string }) {
         上一位访客来自&nbsp;
         {status.lastVisitor.city ? `${status.lastVisitor.city}, ` : undefined}
         {status.lastVisitor.country}&nbsp;
-        {status.lastVisitor.flag} 于 {displayTimeAgo(status.timestamp)}
-      </div>
+        {status.lastVisitor.flag} 于{" "}
+        {displayTimeAgo(status.lastVisitor.timestamp)}
+      </div> */}
       <div className="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

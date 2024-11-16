@@ -9,6 +9,7 @@ import { fillKeywords } from "@/helpers/keywords";
 export const runtime = "edge";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://subnooc.com"),
   title: "主观世界",
   description: "走出唯一真理观",
   applicationName: "主观世界",

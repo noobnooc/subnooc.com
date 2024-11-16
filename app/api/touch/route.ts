@@ -33,6 +33,8 @@ export async function GET(request: NextRequest) {
     timestamp: number;
   }>(KEY_LAST_VISITOR, "json");
 
+  console.log("###", env);
+
   if (env.CF) {
     const country = env.CF.country as string | undefined;
     const city = env.CF.city as string | undefined;

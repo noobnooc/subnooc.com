@@ -1,9 +1,6 @@
 compatibility_date = "2024-11-16"
 compatibility_flags = ["nodejs_compat"]
 
-[vars]
-NODE_VERSION = "20"
-
 [[kv_namespaces]]
 binding = "KV"
 id = "cb857fc906524e3cac1c5fd2953d4fe5"
