@@ -8,7 +8,7 @@ export const runtime = "edge";
 
 const KEY_LAST_VISITOR = "last-visitor";
 const KEY_TOTAL_VISITS = "total-visits";
-const KEY_ONLINE = (id: string) => `online-visitor:-${id}`;
+const KEY_ONLINE = (id: string) => `online-visitor:${id}`;
 
 const MOCK_RESPONSE = {
   totalVisits: 123,
@@ -34,13 +34,8 @@ export async function GET(request: NextRequest) {
     const country = request.cf.country as string | undefined;
     const city = request.cf.city as string | undefined;
     const countryInfo = countries.find((x) => x.cca2 === country);
-    if (countryInfo) {
-      const flag = countryInfo.flag;
-      await env.KV.put(
-        KEY_LAST_VISITOR,
-        JSON.stringify({ country, city, flag })
-      );
-    }
+    const flag = countryInfo?.flag;
+    await env.KV.put(KEY_LAST_VISITOR, JSON.stringify({ country, city, flag }));
   }
 
   // Online visitors count
@@ -59,15 +54,15 @@ export async function GET(request: NextRequest) {
   await env.KV.put(KEY_TOTAL_VISITS, JSON.stringify(totalVisits + 1));
 
   // Response
-  return new Response(
-    JSON.stringify({
+  return Response.json(
+    {
       totalVisits: nextTotalVisits,
       lastVisitor: lastVisitor ?? MOCK_RESPONSE.lastVisitor,
       onlineCount: onlineVisitorsCount,
-    }),
+    },
     {
       headers: !existedVisitorId
-        ? { "Set-Cookie": `visitor-id=${visitorId}` }
+        ? { "Set-Cookie": `visitor-id=${visitorId}; Path=/; HttpOnly` }
         : {},
     }
   );
