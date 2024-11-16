@@ -1,5 +1,5 @@
 import { categories, Post } from "@/.velite";
-import { displayDate } from "@/helpers/convert-date";
+import { displayDate } from "@/helpers/date";
 import classNames from "classnames";
 import Link from "next/link";
 

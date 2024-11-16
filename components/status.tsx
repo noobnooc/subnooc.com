@@ -1,5 +1,6 @@
 "use client";
 
+import { displayTimeAgo } from "@/helpers/date";
 import { prettifyNumber } from "@/helpers/math";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ export function Status({ className }: { className?: string }) {
       country: "CN",
       flag: "🇨🇳",
     },
+    timestamp: Date.now(),
   });
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export function Status({ className }: { className?: string }) {
         上一位访客来自&nbsp;
         {status.lastVisitor.city ? `${status.lastVisitor.city}, ` : undefined}
         {status.lastVisitor.country}&nbsp;
-        {status.lastVisitor.flag}
+        {status.lastVisitor.flag} 于 {displayTimeAgo(status.timestamp)}
       </div>
       <div className="flex items-center">
         <svg
