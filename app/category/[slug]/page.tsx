@@ -94,7 +94,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
       <p className="text-md m-0">{category.description}</p>
       <hr className="my-6" />
       {posts
-        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .map((post) => (
           <article key={post.slug}>
             <Link href={post.permalink}>

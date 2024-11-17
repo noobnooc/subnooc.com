@@ -35,7 +35,7 @@ const posts = JSON.parse(await readFile(".velite/posts.json", "utf8"));
 posts
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .forEach((post) => {
-    const url = `https://subnooc.com/${post.permalink}`;
+    const url = new URL(post.permalink, "https://subnooc.com").href;
     feed.addItem({
       id: url,
       link: url,
