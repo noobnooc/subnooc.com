@@ -6,6 +6,7 @@ import { PostInfo } from "@/components/post-info";
 import { QRCodeSVG } from "qrcode.react";
 import { fillKeywords } from "@/helpers/keywords";
 import classNames from "classnames";
+import { ARCHIVE } from "@/data/archive";
 
 export const runtime = "edge";
 
@@ -65,6 +66,12 @@ export default async function PostPage({ params }: PostProps) {
     notFound();
   }
 
+  const advertisements = ARCHIVE.suggest.filter(
+    (suggest) => suggest.advertisement
+  );
+  const advertisement =
+    advertisements[Math.floor(Math.random() * advertisements.length)];
+
   return (
     <div className="flex flex-col">
       <article className="py-6 prose dark:prose-invert">
@@ -91,31 +98,29 @@ export default async function PostPage({ params }: PostProps) {
         ></div>
       </article>
       <a
-        className="flex border w-fit items-stretch rounded px-4 py-3 gap-4 my-2 no-underline"
-        href="https://apps.apple.com/us/app/%E6%98%9F%E7%81%AB%E8%AE%B0-%E5%BF%AB%E9%80%9F%E8%AE%B0%E5%BD%95%E4%BD%A0%E7%9A%84%E7%81%B5%E6%84%9F/id6480926767?l=zh-Hans-CN"
+        className="flex flex-col border w-fit items-stretch rounded py-4 pr-4 pl-10 my-2 no-underline"
+        href={advertisement.link}
         target="_blank"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6 flex-shrink-0"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
-          />
-        </svg>
-        <div>
-          <h1 className="font-bold">星火记</h1>
-          <p>
-            星火记是一个短笔记应用，可以随时随地记录你的灵感、短笔记。也可以用来记录稍后阅读和日记等。所有的数据均存储在设备本地，可以选择开启
-            iCloud 同步。
-          </p>
+        <label className="text-xs opacity-60">支持我</label>
+        <div className="flex -ml-8 gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 flex-shrink-0"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+            />
+          </svg>
+          <h2 className="font-bold">{advertisement.title}</h2>
         </div>
+        <p>{advertisement.summary}</p>
       </a>
       <hr className="my-4" />
       <span>

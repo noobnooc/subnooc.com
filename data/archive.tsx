@@ -1,6 +1,10 @@
 export const ARCHIVE = {
   reading: [
     {
+      title: "卡拉马佐夫兄弟",
+      summary: "如果我们用恶的方式去结束了恶，那我们还是善良的吗？",
+    },
+    {
       title: "涅朵奇卡",
       summary: "有的人在幻想中越走越远，最终成了幻想家。",
     },
@@ -29,6 +33,10 @@ export const ARCHIVE = {
     },
   ],
   films: [
+    {
+      title: "探险活宝",
+      summary: "看剧学英语的不二之选。",
+    },
     {
       title: "宇宙探索编辑部",
       summary: "长路漫漫地奔赴西方取经，却发现答案就在身边。",
@@ -79,14 +87,29 @@ export const ARCHIVE = {
   ],
   suggest: [
     {
-      title: "莫比乌斯",
-      link: "https://onojyun.com",
-      summary: "更新非常频繁的一个博客，内容也很是不错。",
+      title: "Nooc the Noob",
+      link: "https://nooc.me",
+      summary: "这是我的个人网站。",
+      advertisement: false,
+    },
+    {
+      title: "CassetteOne",
+      link: "https://cassette.one",
+      summary: "我做的一个复古磁带设计的白噪音和音乐播放器。",
+      advertisement: true,
+    },
+    {
+      title: "星火记",
+      link: "https://sparkmemos.com",
+      summary:
+        "我的另一个短笔记 App，用于捕捉灵感、记录想法或者保存稍后阅读等。",
+      advertisement: true,
     },
     {
       title: "游民CO",
       link: "https://youmin.co",
       summary: "我做的一个收集游民相关信息的网站。",
+      advertisement: false,
     },
   ],
 };
