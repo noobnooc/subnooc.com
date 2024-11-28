@@ -1,7 +1,6 @@
 import { NextRequest } from "next/server";
 import { getRequestContext } from "@cloudflare/next-on-pages";
 import countries from "@/helpers/countries.json";
-import { time } from "console";
 
 export const revalidate = 5;
 
@@ -23,7 +22,7 @@ const MOCK_RESPONSE = {
 };
 
 export async function GET(request: NextRequest) {
-  const { env } = getRequestContext();
+  const { env, cf } = getRequestContext();
 
   // Last visitor info
   const lastVisitor = await env.KV.get<{
@@ -33,9 +32,9 @@ export async function GET(request: NextRequest) {
     timestamp: number;
   }>(KEY_LAST_VISITOR, "json");
 
-  if (env.CF) {
-    const country = env.CF.country as string | undefined;
-    const city = env.CF.city as string | undefined;
+  if (cf) {
+    const country = cf.country as string | undefined;
+    const city = cf.city as string | undefined;
     const countryInfo = countries.find((x) => x.cca2 === country);
     const flag = countryInfo?.flag;
     await env.KV.put(
