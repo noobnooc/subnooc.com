@@ -90,7 +90,7 @@ export const ARCHIVE = {
       title: "Nooc the Noob",
       link: "https://nooc.me",
       summary: "这是我的个人网站。",
-      advertisement: false,
+      advertisement: true,
     },
     {
       title: "CassetteOne",
@@ -102,14 +102,21 @@ export const ARCHIVE = {
       title: "星火记",
       link: "https://sparkmemos.com",
       summary:
-        "我的另一个短笔记 App，用于捕捉灵感、记录想法或者保存稍后阅读等。",
+        "我做的一个短笔记 App，用于捕捉灵感、记录想法或者保存稍后阅读等。",
+      advertisement: true,
+    },
+    {
+      title: "Echobell",
+      link: "https://echobell.one",
+      summary:
+        "我做的一个通知类 App，可以将 webhook 和邮件转为电话或 App 通知。可配合 TradingView、GitHub 和 Grafana 等使用。",
       advertisement: true,
     },
     {
       title: "游民CO",
       link: "https://youmin.co",
       summary: "我做的一个收集游民相关信息的网站。",
-      advertisement: false,
+      advertisement: true,
     },
   ],
 };
