@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const ARCHIVE = {
   reading: [
     {
@@ -102,6 +104,18 @@ export const ARCHIVE = {
       advertisement: true,
     },
     {
+      title: "游民CO",
+      link: "https://youmin.co",
+      summary: "我做的一个数字游民社区，会收集数字游民社区、城市、工作等信息。",
+      advertisement: true,
+    },
+    {
+      title: "OneiAI",
+      link: "https://onei.ai",
+      summary: "我做的一个 AI 导航网站。",
+      advertisement: true,
+    },
+    {
       title: "CassetteOne",
       link: "https://cassette.one",
       summary: "我做的一个复古磁带设计的白噪音和音乐播放器。",
@@ -122,10 +136,10 @@ export const ARCHIVE = {
       advertisement: true,
     },
     {
-      title: "游民CO",
-      link: "https://youmin.co",
-      summary: "我做的一个收集游民相关信息的网站。",
-      advertisement: true,
+      title: "Dippod",
+      link: "https://dippod.com",
+      summary: "我正在做的一个使用播客学英语的 App。",
+      advertisement: false,
     },
   ],
 };
