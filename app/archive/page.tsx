@@ -65,12 +65,14 @@ export default function Home() {
           分类
         </h3>
         <ul>
-          {categories.map((category) => (
-            <li key={category.slug}>
-              <Link href={`/category/${category.slug}`}>{category.name}</Link>：
-              {category.count} 篇
-            </li>
-          ))}
+          {categories
+            .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
+            .map((category) => (
+              <li key={category.slug}>
+                <Link href={`/category/${category.slug}`}>{category.name}</Link>
+                ：{category.count} 篇
+              </li>
+            ))}
         </ul>
         <h3 className="flex items-center">
           <svg
